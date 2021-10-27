@@ -1,0 +1,129 @@
+.header {
+    display: flex;
+    justify-content: center;
+    height: 0px;
+}
+
+.scroll-fixed>.header__container {
+    width: 100%;
+    justify-content: center;
+    transition: width .2s ease-in-out;
+}
+
+.header__container {
+    width: 1210px;
+    height: 130px;
+    top: 0;
+    display: flex;
+    margin-top: 30px;
+    padding: 0 15px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    z-index: 3;
+}
+
+.scroll-fixed>#scroll {
+    position: fixed;
+    top: 0;
+    margin-top: 0;
+    height: 90px;
+    box-shadow: 0px 5px 40px rgb(0 0 0 / 20%);
+    border-radius: 0px;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+}
+
+.scroll-fixed>.header__container>.header__inner {
+    margin-right: 149px;
+}
+
+.site-link {
+    display: flex;
+    flex-direction: column;
+}
+
+.fa-phone-alt:before,
+.fa-envelope:before,
+.fa-clock:before {
+    margin-right: 10px;
+}
+
+.header__number {
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--black-color);
+    margin-bottom: 10px;
+}
+
+.header__number:hover {
+    transition: color .15s ease-in-out;
+    color: rgb(3, 159, 23);
+}
+
+.nav__list {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.nav__item:not(:last-child) {
+    padding-right: 15px;
+    border-right: 2px solid rgb(3, 159, 23);
+}
+
+.nav__item:not(:first-child) {
+    padding-left: 15px;
+}
+
+.header__number::after,
+.nav__link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(3, 159, 23);
+    transition: width .3s;
+}
+
+.header__number:focus::after,
+.header__number:hover::after,
+.nav__link:focus::after,
+.nav__link:hover::after{
+    width:100%;
+    transition:width .3s
+}
+
+.header__number:focus,
+.nav__link:focus {
+    color: rgb(3, 159, 23);
+}
+
+.header__number:hover,
+.nav__link:hover {
+    transition: color .15s ease-in-out;
+    color: rgb(3, 159, 23);
+}
+
+.header__contant {
+    align-items: center;
+    margin-right: 30px;
+}
+
+.header__logo {
+    margin-right: 15px;
+    width: 84px;
+    height: 84px;
+}
+
+.logo__descr {
+    width: 180px;
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.75;
+}

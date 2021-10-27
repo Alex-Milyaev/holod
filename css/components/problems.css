@@ -1,0 +1,38 @@
+.problems {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.problems__descr {
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.problems__list {
+    flex-wrap: wrap;
+}
+
+.problems__item {
+    width: 25%;
+    height: 317px;
+    padding: 140px 30px 0px 30px;
+    border-radius: 4px;
+    text-align: center;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: 50% 17%;
+}
+
+.item__title {
+    color: rgb(3, 159, 23);
+    padding-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.item__descr {
+    font-size: 18px;
+    line-height: 1.55;
+    font-weight: 300;
+}
