@@ -40,25 +40,33 @@ var swiper3 = new Swiper('#slider3', {
 	spaceBetween: 15,
 	loop: true,
 	slideToClickedSlide: true,
-	// breakpoints: {
-	// 	750: {
-	// 		slidesPerView: 2,
-	// 		spaceBetween: 34,
-	// 		observer: true,
-	// 	},
-	// 	970: {
-	// 		slidesPerView: 2,
-	// 		spaceBetween: 50,
-	// 		observer: true,
-	// 	},
-	// 	1430: {
-	// 		slidesPerView: 3,
-	// 		slidesPerColumn: 1,
-	// 		slidesPerGroup: 1,
-	// 		spaceBetween: 20,
-	// 		observer: true,
-	// 	},
-	// },
+	breakpoints: {
+		320: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+			observer: true,
+		},
+		750: {
+			slidesPerView: 2,
+			spaceBetween: 15,
+			observer: true,
+		},
+		970: {
+			slidesPerView: 3,
+			spaceBetween: 15,
+			observer: true,
+		},
+		1200: {
+			slidesPerView: 3,
+			spaceBetween: 15,
+			observer: true,
+		},
+		1430: {
+			slidesPerView: 4,
+			spaceBetween: 15,
+			observer: true,
+		},
+	},
 
 	autoplay: {
 		delay: 6000,
@@ -66,95 +74,92 @@ var swiper3 = new Swiper('#slider3', {
 	},
 });
 
+// const popupLinks = document.querySelectorAll('.popup-link');
+// const body = document.querySelector('body');
+// const lockPadding = document.querySelectorAll(".lock-padding");
 
+// let unlock = true;
 
-const popupLinks = document.querySelectorAll('.popup-link');
-const body = document.querySelector('body');
-const lockPadding = document.querySelectorAll(".lock-padding");
+// const timeout = 600;
 
-let unlock = true;
+// if (popupLinks.length > 0) {
+// 	for (let index = 0; index < popupLinks.length; index++) {
+// 		const popupLink = popupLinks[index];
+// 		popupLink.addEventListener("click", function (e) {
+// 			const popupName = popupLink.getAttribute('href').replace('#', '');
+// 			const curentPopup = document.getElementById(popupName);
+// 			popupOpen(curentPopup);
+// 			e.preventDefault();
+// 		});
+// 	}
+// }
+// const popupCloseIcon = document.querySelectorAll('.close-popup');
+// if (popupCloseIcon.length > 0) {
+// 	for (let index = 0; index < popupCloseIcon.length; index++) {
+// 		const el = popupCloseIcon[index];
+// 		el.addEventListener('click', function (e) {
+// 			popupClose(el.closest('.popup'));
+// 			e.preventDefault();
+// 		});
+// 	}
+// }
 
-const timeout = 600;
+// function popupOpen(curentPopup) {
+// 	if (curentPopup && unlock) {
+// 		const popupActive = document.querySelector('.popup.open');
+// 		if (popupActive) {
+// 			popupClose(popupActive, false);
+// 		} else {
+// 			bodyLock();
+// 		}
+// 		curentPopup.classList.add('open');
+// 		curentPopup.addEventListener("click", function (e) {
+// 			if (!e.target.closest('.popup__content')) {
+// 				popupClose(e.target.closest('.popup'));
+// 			}
+// 		});
+// 	}
+// }
+// function popupClose(popupActive, doUnlock = true) {
+// 	if (unlock) {
+// 		popupActive.classList.remove('open');
+// 		if (doUnlock) {
+// 			bodyUnLock();
+// 		}
+// 	}
+// }
 
-if (popupLinks.length > 0) {
-	for (let index = 0; index < popupLinks.length; index++) {
-		const popupLink = popupLinks[index];
-		popupLink.addEventListener("click", function (e) {
-			const popupName = popupLink.getAttribute('href').replace('#', '');
-			const curentPopup = document.getElementById(popupName);
-			popupOpen(curentPopup);
-			e.preventDefault();
-		});
-	}
-}
-const popupCloseIcon = document.querySelectorAll('.close-popup');
-if (popupCloseIcon.length > 0) {
-	for (let index = 0; index < popupCloseIcon.length; index++) {
-		const el = popupCloseIcon[index];
-		el.addEventListener('click', function (e) {
-			popupClose(el.closest('.popup'));
-			e.preventDefault();
-		});
-	}
-}
+// function bodyLock() {
+// 	const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
 
-function popupOpen(curentPopup) {
-	if (curentPopup && unlock) {
-		const popupActive = document.querySelector('.popup.open');
-		if (popupActive) {
-			popupClose(popupActive, false);
-		} else {
-			bodyLock();
-		}
-		curentPopup.classList.add('open');
-		curentPopup.addEventListener("click", function (e) {
-			if (!e.target.closest('.popup__content')) {
-				popupClose(e.target.closest('.popup'));
-			}
-		});
-	}
-}
-function popupClose(popupActive, doUnlock = true) {
-	if (unlock) {
-		popupActive.classList.remove('open');
-		if (doUnlock) {
-			bodyUnLock();
-		}
-	}
-}
+// 	for (let index = 0; index < lockPadding.length; index++) {
+// 		const el = lockPadding[index];
+// 		el.style.paddingRight = lockPaddingValue;
+// 	}
+// 	body.style.paddingRight = lockPaddingValue;
+// 	body.classList.add('lock');
 
+// 	unlock = false;
+// 	setTimeout(function () {
+// 		unlock = true;
+// 	}, timeout);
+// }
 
-function bodyLock() {
-	const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+// function bodyUnLock() {
+// 	setTimeout(function () {
+// 		for	(let index = 0; index < lockPadding.length; index++) {
+// 			const el = lockPadding[index];
+// 			el.style.paddingRight = '0px';
+// 		}
+// 		body.style.paddingRight = '0px';
+// 		body.classList.remove('lock');
+// 	}, timeout);
 
-	for (let index = 0; index < lockPadding.length; index++) {
-		const el = lockPadding[index];
-		el.style.paddingRight = lockPaddingValue;
-	}
-	body.style.paddingRight = lockPaddingValue;
-	body.classList.add('lock');
-
-	unlock = false;
-	setTimeout(function () {
-		unlock = true;
-	}, timeout);
-}
-
-function bodyUnLock() {
-	setTimeout(function () {
-		for	(let index = 0; index < lockPadding.length; index++) {
-			const el = lockPadding[index];
-			el.style.paddingRight = '0px';
-		}
-		body.style.paddingRight = '0px';
-		body.classList.remove('lock');
-	}, timeout);
-
-	unlock = false;
-	setTimeout(function () {
-		unlock = true;
-	}, timeout);
-}
+// 	unlock = false;
+// 	setTimeout(function () {
+// 		unlock = true;
+// 	}, timeout);
+// }
 
 const anchors = document.querySelectorAll('a[href*="#"]')
 
@@ -204,3 +209,46 @@ function init(){
     // Размещение геообъекта на карте.
     myMap.geoObjects.add(myPlacemark); 
 }
+
+let selector = document.querySelectorAll('input[type="tel"]');
+let im = new Inputmask('+7 (999) 999-99-99');
+im.mask(selector);
+
+let validateForms = function(selector, rules, successModal, yaGoal) {
+	new window.JustValidate(selector, {
+		rules: rules,
+		submitHandler: function(form) {
+			let formData = new FormData(form);
+
+			let xhr = new XMLHttpRequest();
+
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4) {
+					if (xhr.status === 200) {
+						console.log('Отправлено');
+					}
+				}
+			}
+
+			xhr.open('POST', 'mail.php', true);
+			xhr.send(formData);
+
+			form.reset();
+		}
+	});
+}
+
+validateForms('.request__form', {tel: {required: true} })
+
+///// burger - menu /////
+const burgerBtn = document.querySelector('.burger');
+const menuClose = document.querySelector('.menu__close');
+const menuBurger = document.querySelector('.nav');
+
+burgerBtn.addEventListener('click', () => {
+	menuBurger.classList.add('burger__active');
+});
+
+menuClose.addEventListener('click', () => {
+	menuBurger.classList.remove('burger__active');
+});
