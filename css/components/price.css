@@ -49,13 +49,6 @@
     padding-left: 15px;
 }
 
-.amendment {
-    border-top: 1px solid grey;
-    margin-left: 70px;
-    padding-top: 10px;
-}
-
 .price__btn {
-    display: block;
-    margin: 80px auto 0;
+   text-align: center;
 }

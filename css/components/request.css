@@ -25,8 +25,9 @@
 
 .request__form {
     display: flex;
-    max-width: 1000px;
+    max-width: 720px;
     margin: 0 auto;
+    justify-content: space-between;
 }
 
 .request__input {
@@ -39,7 +40,6 @@
     border: 1px solid #c9c9c9;
     border-radius: 10px;
     padding-left: 20px;
-    margin-right: 20px;
 }
 
 .request__btn {
@@ -47,3 +47,13 @@
     border-radius: 10px;
 }
     
+.form-label {
+    position: relative;
+    margin-right: 20px;
+}
+
+.js-validate-error-label {
+    position: absolute;
+    right: 5px;
+    top: 100%;
+}
